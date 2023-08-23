@@ -1,0 +1,56 @@
+disabled_rules: # rule identifiers to exclude from running
+  - colon
+  - comma
+  - control_statement
+  - trailing_whitespace
+opt_in_rules: # some rules are only opt-in
+  - empty_count
+  # Find all the available rules by running:
+  # swiftlint rules
+included: # paths to include during linting. `--path` is ignored if present.
+  - Movie-Catalog
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+  - Movie-Catalog/Application/Resources
+
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+line_length: 110
+# they can set both implicitly with an array
+type_body_length:
+  - 300 # warning
+  - 400 # error
+# or they can set both explicitly
+file_length:
+  warning: 500
+  error: 1200
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded: iPhone # excluded via string
+  allowed_symbols: ["_"] # these are allowed in type names
+identifier_name:
+  min_length: # only min_length
+    warning: 0
+    error: 1 # only error
+  excluded: # excluded via string array
+    - GlobalAPIKey
+reporter: "xcode"
+
+custom_rules:
+  no_direct_standard_out_logs:
+    name: "Writing log messages directly to standard out is disallowed"
+    regex: "(\\bprint|\\bdebugPrint|\\bdump|Swift\\.print|Swift\\.debugPrint|Swift\\.dump)\\s*\\("
+    match_kinds:
+      - identifier
+    message: "Don't ommit `print(_)`, `debugPrint(_)`, or `dump(_)` as they write to standard out in release"
+    severity: warning
