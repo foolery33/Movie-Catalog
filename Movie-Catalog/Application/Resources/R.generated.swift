@@ -12,9 +12,27 @@ let R = _R(bundle: Bundle(for: BundleFinder.self))
 
 struct _R {
   let bundle: Foundation.Bundle
+  var string: string { .init(bundle: bundle, preferredLanguages: nil, locale: nil) }
+  var color: color { .init(bundle: bundle) }
+  var image: image { .init(bundle: bundle) }
   var info: info { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
+  func string(bundle: Foundation.Bundle) -> string {
+    .init(bundle: bundle, preferredLanguages: nil, locale: nil)
+  }
+  func string(locale: Foundation.Locale) -> string {
+    .init(bundle: bundle, preferredLanguages: nil, locale: locale)
+  }
+  func string(preferredLanguages: [String], locale: Locale? = nil) -> string {
+    .init(bundle: bundle, preferredLanguages: preferredLanguages, locale: locale)
+  }
+  func color(bundle: Foundation.Bundle) -> color {
+    .init(bundle: bundle)
+  }
+  func image(bundle: Foundation.Bundle) -> image {
+    .init(bundle: bundle)
+  }
   func info(bundle: Foundation.Bundle) -> info {
     .init(bundle: bundle)
   }
@@ -27,6 +45,155 @@ struct _R {
 
   struct project {
     let developmentRegion = "en"
+  }
+
+  /// This `_R.string` struct is generated, and contains static references to 1 localization tables.
+  struct string {
+    let bundle: Foundation.Bundle
+    let preferredLanguages: [String]?
+    let locale: Locale?
+    var localizable: localizable { .init(source: .init(bundle: bundle, tableName: "Localizable", preferredLanguages: preferredLanguages, locale: locale)) }
+
+    func localizable(preferredLanguages: [String]) -> localizable {
+      .init(source: .init(bundle: bundle, tableName: "Localizable", preferredLanguages: preferredLanguages, locale: locale))
+    }
+
+
+    /// This `_R.string.localizable` struct is generated, and contains static references to 20 localization keys.
+    struct localizable {
+      let source: RswiftResources.StringResource.Source
+
+      /// Value: Произошла внутрення ошибка приложения при кодировании данных или выполнении запроса. Пожалуйста, попробуйте повторить попытку или свяжитесь с тех. поддержкой
+      ///
+      /// Key: data_mapping_error
+      var data_mapping_error: RswiftResources.StringResource { .init(key: "data_mapping_error", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Готово
+      ///
+      /// Key: done
+      var done: RswiftResources.StringResource { .init(key: "done", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Войти
+      ///
+      /// Key: enter
+      var enter: RswiftResources.StringResource { .init(key: "enter", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Ошибка
+      ///
+      /// Key: error
+      var error: RswiftResources.StringResource { .init(key: "error", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Произошла ошибка: 
+      ///
+      /// Key: error_with_message
+      var error_with_message: RswiftResources.StringResource { .init(key: "error_with_message", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: На одной из фотографий лицо не было найдено
+      ///
+      /// Key: face_detected
+      var face_detected: RswiftResources.StringResource { .init(key: "face_detected", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Данная информация или операция не доступна для вас
+      ///
+      /// Key: forbidden_error
+      var forbidden_error: RswiftResources.StringResource { .init(key: "forbidden_error", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Ваше интернет соединение было утрачено. Настройте интернет соединение и повторите попытку
+      ///
+      /// Key: internet_connection_lost_error
+      var internet_connection_lost_error: RswiftResources.StringResource { .init(key: "internet_connection_lost_error", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Логин
+      ///
+      /// Key: login
+      var login: RswiftResources.StringResource { .init(key: "login", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Интернет соединение отключено. Настройте интернет соединение и повторите попытку
+      ///
+      /// Key: no_connected_to_internet_error
+      var no_connected_to_internet_error: RswiftResources.StringResource { .init(key: "no_connected_to_internet_error", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: ОК
+      ///
+      /// Key: ok
+      var ok: RswiftResources.StringResource { .init(key: "ok", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Пароль
+      ///
+      /// Key: password
+      var password: RswiftResources.StringResource { .init(key: "password", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Пароль не должен быть пустым
+      ///
+      /// Key: password_empty_error
+      var password_empty_error: RswiftResources.StringResource { .init(key: "password_empty_error", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Регистрация
+      ///
+      /// Key: registration
+      var registration: RswiftResources.StringResource { .init(key: "registration", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Произошла ошибка сервера. Пожалуйста, повторите попытку позже еще раз
+      ///
+      /// Key: server_error
+      var server_error: RswiftResources.StringResource { .init(key: "server_error", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Произошла ошибка сервера. 
+      ///
+      /// Key: server_error_with_message
+      var server_error_with_message: RswiftResources.StringResource { .init(key: "server_error_with_message", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Время отправки запроса истекло. Попробуйте еще раз позже
+      ///
+      /// Key: timeout_error
+      var timeout_error: RswiftResources.StringResource { .init(key: "timeout_error", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Произошла непредвиденная ошибка. Пожалуйста, свяжитесь с тех. поддержкой
+      ///
+      /// Key: unknown_error
+      var unknown_error: RswiftResources.StringResource { .init(key: "unknown_error", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Имя пользователя не должно быть пустым
+      ///
+      /// Key: username_empty_error
+      var username_empty_error: RswiftResources.StringResource { .init(key: "username_empty_error", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Произошла внутренняя ошибка приложения. Пожалуйста, попробуйте повторить попытку или свяжитесь с тех. поддержкой
+      ///
+      /// Key: validate_error
+      var validate_error: RswiftResources.StringResource { .init(key: "validate_error", tableName: "Localizable", source: source, developmentValue: nil, comment: nil) }
+    }
+  }
+
+  /// This `_R.color` struct is generated, and contains static references to 6 colors.
+  struct color {
+    let bundle: Foundation.Bundle
+
+    /// Color `accent`.
+    var accent: RswiftResources.ColorResource { .init(name: "accent", path: [], bundle: bundle) }
+
+    /// Color `background`.
+    var background: RswiftResources.ColorResource { .init(name: "background", path: [], bundle: bundle) }
+
+    /// Color `gray`.
+    var gray: RswiftResources.ColorResource { .init(name: "gray", path: [], bundle: bundle) }
+
+    /// Color `grayFaded`.
+    var grayFaded: RswiftResources.ColorResource { .init(name: "grayFaded", path: [], bundle: bundle) }
+
+    /// Color `transparent`.
+    var transparent: RswiftResources.ColorResource { .init(name: "transparent", path: [], bundle: bundle) }
+
+    /// Color `white`.
+    var white: RswiftResources.ColorResource { .init(name: "white", path: [], bundle: bundle) }
+  }
+
+  /// This `_R.image` struct is generated, and contains static references to 1 images.
+  struct image {
+    let bundle: Foundation.Bundle
+
+    /// Image `appLogo`.
+    var appLogo: RswiftResources.ImageResource { .init(name: "appLogo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.

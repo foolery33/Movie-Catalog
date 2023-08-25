@@ -18,7 +18,10 @@ final class AppCoordinator: BaseNavigationCoordinator {
     // MARK: - Private Methods
 
     private func startAuthFlow() {
+        let coordinator = AuthCoordinator(navigationController: navigationController)
 
+        add(child: coordinator)
+        coordinator.start()
     }
 
 }

@@ -6,5 +6,5 @@
 //
 
 enum AppImages {
-
+    static let appLogo = R.image.appLogo()!
 }
