@@ -3,6 +3,7 @@ disabled_rules: # rule identifiers to exclude from running
   - comma
   - control_statement
   - trailing_whitespace
+  - large_tuple
 opt_in_rules: # some rules are only opt-in
   - empty_count
   # Find all the available rules by running:
@@ -52,5 +53,5 @@ custom_rules:
     regex: "(\\bprint|\\bdebugPrint|\\bdump|Swift\\.print|Swift\\.debugPrint|Swift\\.dump)\\s*\\("
     match_kinds:
       - identifier
-    message: "Don't ommit `print(_)`, `debugPrint(_)`, or `dump(_)` as they write to standard out in release"
+    message: "Don't commit `print(_)`, `debugPrint(_)`, or `dump(_)` as they write to standard out in release"
     severity: warning
